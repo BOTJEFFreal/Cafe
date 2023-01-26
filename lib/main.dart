@@ -10,15 +10,18 @@ const _credentials = r'''
 const _spreadsheetID = "1sIY74Su1fnMYRLhpNL4kzISNus5wbeWirdalGCApiLo";
 
 void main() async {
-  //init
-  final gsheets = GSheets(_credentials);
-  //fetch by ID
-  final ss = await gsheets.spreadsheet(_spreadsheetID);
-  //get WS by ID
-  var sheet = ss.worksheetByTitle('USER');
-  // add to cell
-
-  runApp(const LandingPage());
+  // //init
+  // final gsheets = GSheets(_credentials);
+  // //fetch by ID
+  // final ss = await gsheets.spreadsheet(_spreadsheetID);
+  // //get WS by ID
+  // var sheet = ss.worksheetByTitle('USER');
+  // // add to cell
+  runApp(MaterialApp(
+    home: Scaffold(
+      body: LandingPage(),
+    ),
+  ));
 }
 
 
