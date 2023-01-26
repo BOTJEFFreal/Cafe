@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sheets_as_db/pages/LandingPage.dart';
+import 'package:sheets_as_db/pages/sign_up/GURUsignUpPage.dart';
 
-import 'GURUsignUpPage.dart';
+import 'USERsign_up/USERsignUpPage.dart';
+
 
 class SelectRole extends StatefulWidget {
   const SelectRole({Key? key}) : super(key: key);
@@ -26,6 +28,10 @@ class _SelectRoleState extends State<SelectRole> {
                 onTap: (){
                   setState(() {
                     isElevated = !isElevated;
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const USERsignUpPage()),
+                    );
                   });
                 },
 
@@ -59,7 +65,7 @@ class _SelectRoleState extends State<SelectRole> {
                     isElevated = !isElevated;
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const GuruSignUpPage()),
+                      MaterialPageRoute(builder: (context) => const GURUsignUpPage()),
                     );
                   });
                 },

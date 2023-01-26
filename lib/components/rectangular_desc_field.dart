@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+
+import '../constants/constants.dart';
+import 'neumorphic_text_field_container.dart';
+import 'neumorphic_text_field_desc_container.dart';
+
+class RectangularDescField extends StatelessWidget {
+
+  final String hintText;
+  // final IconData icon;
+  final bool obscureText;
+
+  const RectangularDescField({Key? key, required this.hintText, required this.obscureText}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return DescTextFieldContainer(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 4,right: 16,left: 16),
+        child: TextField(
+          cursorColor: black,
+          obscureText: obscureText,
+          decoration: InputDecoration(
+            hintText: hintText,
+            helperStyle: TextStyle(
+              color: black.withOpacity(0.7),
+              fontSize: 18,
+            ),
+            // prefixIcon: Icon(icon,color: black.withOpacity(0.7),size: 20,),
+            border: InputBorder.none,
+          ),
+        ),
+      ),
+    );
+  }
+}

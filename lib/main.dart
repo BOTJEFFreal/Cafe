@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gsheets/gsheets.dart';
 import 'package:sheets_as_db/pages/LandingPage.dart';
+import 'package:sheets_as_db/pages/sign_up/GURUsignUpPage.dart';
 
 //creds
 const _credentials = r'''
@@ -19,7 +20,7 @@ void main() async {
   // // add to cell
   runApp(MaterialApp(
     home: Scaffold(
-      body: LandingPage(),
+      body: GURUsignUpPage(),
     ),
   ));
 }
