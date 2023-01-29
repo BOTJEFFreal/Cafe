@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../components/neumorphic_dropdown.dart';
 import '../../../components/rectangular_button.dart';
 import '../../../components/rectangular_desc_field.dart';
 import '../../../components/rectangular_input_field.dart';
@@ -21,14 +22,14 @@ class _CredentialsState extends State<Credentials> {
   final TextEditingController PasswordController = TextEditingController();
   final TextEditingController DescController = TextEditingController();
 
+  String? dropDownValue;
+
+
   @override
   Widget build(BuildContext context) {
-    String? dropDownValue;
     List<String> cityList = [
       'A','B','C','D'
     ];
-
-
 
     return Padding(
       padding: const EdgeInsets.all(appPadding),
@@ -122,6 +123,7 @@ class _CredentialsState extends State<Credentials> {
             print('EMAIL: ${EmailController.text}');
             print('PASS: ${PasswordController.text}');
             print('DESC: ${DescController.text}');
+            print('DropDown: ${dropDownValue}');
           })
         ],
       ),
