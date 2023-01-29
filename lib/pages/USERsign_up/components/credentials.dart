@@ -16,6 +16,9 @@ class Credentials extends StatefulWidget {
 }
 
 class _CredentialsState extends State<Credentials> {
+  final TextEditingController UserController = TextEditingController();
+  final TextEditingController EmailController = TextEditingController();
+  final TextEditingController PasswordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     String? dropDownValue;
@@ -31,6 +34,7 @@ class _CredentialsState extends State<Credentials> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           RectangularInputField(
+            controller: UserController,
             hintText: 'Username',
             icon: Icons.person,
             obscureText: false,
@@ -39,6 +43,7 @@ class _CredentialsState extends State<Credentials> {
             height: 12 / 2,
           ),
           RectangularInputField(
+            controller: EmailController,
             hintText: 'Email',
             icon: Icons.email_rounded,
             obscureText: false,
@@ -47,6 +52,7 @@ class _CredentialsState extends State<Credentials> {
             height: 12 / 2,
           ),
           RectangularInputField(
+            controller: PasswordController,
             hintText: 'Password',
             icon: Icons.lock,
             obscureText: true,
@@ -56,7 +62,9 @@ class _CredentialsState extends State<Credentials> {
           ),
 
 
-          RectangularButton(text: 'Sign In', press: (){})
+          RectangularButton(text: 'Sign In', press: (){
+            print(UserController.text);
+          })
         ],
       ),
     );

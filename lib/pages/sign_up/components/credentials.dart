@@ -16,6 +16,11 @@ class Credentials extends StatefulWidget {
 }
 
 class _CredentialsState extends State<Credentials> {
+  final TextEditingController UserController = TextEditingController();
+  final TextEditingController EmailController = TextEditingController();
+  final TextEditingController PasswordController = TextEditingController();
+  final TextEditingController DescController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     String? dropDownValue;
@@ -31,6 +36,7 @@ class _CredentialsState extends State<Credentials> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           RectangularInputField(
+            controller: UserController,
             hintText: 'Username',
             icon: Icons.person,
             obscureText: false,
@@ -39,6 +45,7 @@ class _CredentialsState extends State<Credentials> {
             height: 12 / 2,
           ),
           RectangularInputField(
+            controller: EmailController,
             hintText: 'Email',
             icon: Icons.email_rounded,
             obscureText: false,
@@ -47,18 +54,15 @@ class _CredentialsState extends State<Credentials> {
             height: 12 / 2,
           ),
           RectangularInputField(
-            hintText: 'Password',
-            icon: Icons.lock,
-            obscureText: true,
-          ),
-          RectangularInputField(
+            controller: PasswordController ,
             hintText: 'Password',
             icon: Icons.lock,
             obscureText: true,
           ),
           RectangularDescField(
+            controller: DescController ,
             hintText: 'Description',
-            obscureText: true,
+            obscureText: false,
           ),
           SizedBox(
             height: 12 / 2,
@@ -113,7 +117,12 @@ class _CredentialsState extends State<Credentials> {
           ),
         ),
 
-          RectangularButton(text: 'Sign In', press: (){})
+          RectangularButton(text: 'Sign In', press: (){
+            print('USERNAME: ${UserController.text}');
+            print('EMAIL: ${EmailController.text}');
+            print('PASS: ${PasswordController.text}');
+            print('DESC: ${DescController.text}');
+          })
         ],
       ),
     );

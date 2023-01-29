@@ -8,7 +8,7 @@ const _credentials = r'''
 ''';
 
 //spreadsheet id
-const _spreadsheetID = "1sIY74Su1fnMYRLhpNL4kzISNus5wbeWirdalGCApiLo";
+const _spreadsheetID = "";
 
 void main() async {
   // //init
@@ -16,11 +16,11 @@ void main() async {
   // //fetch by ID
   // final ss = await gsheets.spreadsheet(_spreadsheetID);
   // //get WS by ID
-  // var sheet = ss.worksheetByTitle('USER');
+  // var sheet = ss. worksheetByTitle('USER');
   // // add to cell
   runApp(MaterialApp(
     home: Scaffold(
-      body: GURUsignUpPage(),
+      body: LandingPage(),
     ),
   ));
 }

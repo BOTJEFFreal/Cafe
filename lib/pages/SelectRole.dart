@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sheets_as_db/pages/LandingPage.dart';
 import 'package:sheets_as_db/pages/sign_up/GURUsignUpPage.dart';
 
 import 'USERsign_up/USERsignUpPage.dart';
