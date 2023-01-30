@@ -58,7 +58,7 @@ class _GURUlistState extends State<GURUlist> {
                   child: DropdownButton<String>(
                     value: dropDownValue,
                     icon: Icon(null),
-                    hint: Text("Select"),
+                    hint: Text("Select Field"),
                     elevation: 16,
                     onChanged: (var newValue) {
                       setState(() {

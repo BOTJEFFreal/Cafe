@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gsheets/gsheets.dart';
+import 'package:sheets_as_db/pages/DetailGURUpage/DetailGURUpage.dart';
 import 'package:sheets_as_db/pages/GURUList/GURUlist.dart';
 import 'package:sheets_as_db/pages/LandingPage.dart';
 import 'package:sheets_as_db/pages/sign_up/GURUsignUpPage.dart';
@@ -21,7 +22,7 @@ void main() async {
   // // add to cell
   runApp(MaterialApp(
     home: Scaffold(
-      body: GURUlist(),
+      body: DetailGURUpage(),
     ),
   ));
 }

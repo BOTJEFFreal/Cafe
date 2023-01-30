@@ -4,7 +4,12 @@ import 'package:flutter/material.dart';
 import '../../constants/constants.dart';
 
 class GuruListTile extends StatefulWidget {
-  const GuruListTile({Key? key}) : super(key: key);
+  final desc;
+  final field;
+  final name;
+  final rating;
+  final exp;
+  const GuruListTile({Key? key, required this.name, required this.rating, required this.exp, required this.desc, required this.field}) : super(key: key);
 
   @override
   State<GuruListTile> createState() => _GuruListTileState();
@@ -54,15 +59,15 @@ class _GuruListTileState extends State<GuruListTile> {
                       spacing: 5,
                       children: [
                         Text(
-                          "Name: ABCD",
+                          "Name: ${widget.name}",
                           style: testStyle,
                         ),
                         Text(
-                          "Rating: 5star",
+                          "Rating:  ${widget.rating}star",
                           style: testStyle,
                         ),
                         Text(
-                          "Exp: 1K+ hours",
+                          "Exp:  ${widget.exp}K+ hours",
                           style: testStyle,
                         ),
                       ],
@@ -72,7 +77,7 @@ class _GuruListTileState extends State<GuruListTile> {
                 Padding(
                   padding: const EdgeInsets.only(right: 10.0),
                   child: Text(
-                    "App Dev",
+                    "${widget.field}",
                     style: TextStyle(
                       color: Colors.grey[800],
                       fontWeight: FontWeight.w900,
@@ -85,9 +90,9 @@ class _GuruListTileState extends State<GuruListTile> {
               height: 8,
             ),
             Container(
-              child: const Text(
-                  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean",style:  TextStyle(
-                  fontWeight: FontWeight.w500, fontSize: 14, color: Colors.black54),),
+              child:Text(
+                "${widget.desc}",
+                 style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 14, color: Colors.black54),),
             )
           ],
         ),

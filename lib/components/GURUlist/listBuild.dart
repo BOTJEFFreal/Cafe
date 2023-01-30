@@ -22,7 +22,7 @@ class _GURUListState extends State<GURUList> {
               borderRadius: BorderRadius.circular(6),
               child: Container(
                 color: Colors.grey[200],
-                child: GuruListTile(),
+                child: GuruListTile(name: null, rating: null, exp: null, desc: null, field: null,),
               ),
             ),
           );
