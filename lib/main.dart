@@ -7,12 +7,7 @@ import 'package:sheets_as_db/pages/Login/loginPage.dart';
 import 'package:sheets_as_db/pages/UsersList/Userlist.dart';
 import 'package:sheets_as_db/pages/sign_up/GURUsignUpPage.dart';
 
-//creds
-const _credentials = r'''
-''';
 
-//spreadsheet id
-const _spreadsheetID = "z";
 
 void main() async {
   // //init
