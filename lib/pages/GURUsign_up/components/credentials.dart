@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../API/sheetAPI.dart';
 import '../../../components/neumorphic_dropdown.dart';
 import '../../../components/rectangular_button.dart';
 import '../../../components/rectangular_desc_field.dart';
@@ -23,6 +24,21 @@ class _CredentialsState extends State<Credentials> {
   final TextEditingController DescController = TextEditingController();
 
   String? dropDownValue;
+
+  @override
+  void initState() {
+    super.initState();
+    UserController.addListener(() => setState(() {}));
+    EmailController.addListener(() => setState(() {}));
+    PasswordController.addListener(() => setState(() {}));
+    DescController.addListener(() => setState(() {}));
+  }
+
+  // void _post() {
+  //   GoogleSheetsApi.insert(UserController.text);
+  //   UserController.clear();
+  //   setState(() {});
+  // }
 
 
   @override
@@ -54,12 +70,12 @@ class _CredentialsState extends State<Credentials> {
           SizedBox(
             height: 12 / 2,
           ),
-          RectangularInputField(
-            controller: PasswordController ,
-            hintText: 'Password',
-            icon: Icons.lock,
-            obscureText: true,
-          ),
+          // RectangularInputField(
+          //   controller: PasswordController ,
+          //   hintText: 'Password',
+          //   icon: Icons.lock,
+          //   obscureText: true,
+          // ),
           RectangularDescField(
             controller: DescController ,
             hintText: 'Description',
@@ -124,6 +140,8 @@ class _CredentialsState extends State<Credentials> {
             print('PASS: ${PasswordController.text}');
             print('DESC: ${DescController.text}');
             print('DropDown: ${dropDownValue}');
+            // _post();
+            ADDguru(UserController.text,EmailController.text,DescController.text,dropDownValue);
           })
         ],
       ),
