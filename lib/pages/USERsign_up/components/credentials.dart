@@ -62,7 +62,7 @@ class _CredentialsState extends State<Credentials> {
           ),
 
 
-          RectangularButton(text: 'Sign In', press: (){
+          RectangularButton(text: 'Sign In',width: double.infinity,fontSize: 20, press: (){
             print(UserController.text);
           })
         ],

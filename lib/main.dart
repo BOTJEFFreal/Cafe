@@ -19,7 +19,7 @@ void main() async {
   // // add to cell
   runApp(MaterialApp(
     home: Scaffold(
-      body: GURUsignUpPage(),
+      body: GURUlist(),
     ),
   ));
 }

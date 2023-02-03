@@ -1,14 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants/constants.dart';
+import '../constants/constants.dart';
 
-class RectangularButton extends StatelessWidget {
+class SmallRectangularButton extends StatelessWidget {
   final String text;
   final VoidCallback press;
   final width;
   final fontSize;
 
-  const RectangularButton({Key? key, required this.text, required this.press, this.width, required this.fontSize})
+  const SmallRectangularButton({Key? key, required this.text, required this.press, this.width, this.fontSize})
       :super(key: key);
 
   @override
@@ -18,10 +19,10 @@ class RectangularButton extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(top: appPadding,bottom: appPadding /2),
         child: Container(
-          width: width,
-          height: 65,
+          width: 80,
+          height: 50,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(12),
               gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,

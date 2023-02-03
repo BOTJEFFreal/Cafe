@@ -43,10 +43,6 @@ class _CredentialsState extends State<Credentials> {
 
   @override
   Widget build(BuildContext context) {
-    List<String> cityList = [
-      'A','B','C','D'
-    ];
-
     return Padding(
       padding: const EdgeInsets.all(appPadding),
       child: Column(
@@ -124,7 +120,7 @@ class _CredentialsState extends State<Credentials> {
                 });
               },
               underline: SizedBox(),
-              items: cityList.map<DropdownMenuItem<String>>((String value) {
+              items: ListofSkill.map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(value),
@@ -134,7 +130,7 @@ class _CredentialsState extends State<Credentials> {
           ),
         ),
 
-          RectangularButton(text: 'Sign In', press: (){
+          RectangularButton(text: 'Sign In', width:double.infinity,fontSize:20,press: (){
             print('USERNAME: ${UserController.text}');
             print('EMAIL: ${EmailController.text}');
             print('PASS: ${PasswordController.text}');
@@ -142,6 +138,7 @@ class _CredentialsState extends State<Credentials> {
             print('DropDown: ${dropDownValue}');
             // _post();
             ADDguru(UserController.text,EmailController.text,DescController.text,dropDownValue);
+            GETgurulist(dropDownValue);
           })
         ],
       ),
