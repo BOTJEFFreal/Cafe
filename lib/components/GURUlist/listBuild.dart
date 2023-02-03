@@ -29,6 +29,7 @@ class _GURUListState extends State<GURUList> {
                   exp: widget.list[index][4],
                   desc: widget.list[index][2],
                   field: widget.list[index][3],
+                  index: index,
                 ),
               ),
             ),

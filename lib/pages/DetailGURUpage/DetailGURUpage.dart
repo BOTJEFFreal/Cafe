@@ -10,7 +10,7 @@ class DetailGURUpage extends StatefulWidget {
   final rating;
   final exp;
   const DetailGURUpage(
-      {Key? key, this.desc, this.rate, this.name, this.rating, this.exp})
+      {Key? key, required this.desc, required this.rate, required this.name, required this.rating,required this.exp})
       : super(key: key);
 
   @override

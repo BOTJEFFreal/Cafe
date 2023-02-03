@@ -22,7 +22,7 @@ Future<List> GETgurulist(Skill) async {
     numberOfNotes++;
   }
   print(numberOfNotes);
-  for (int i = 1; i < numberOfNotes; i++) {
+  for (int i = 2; i < numberOfNotes+1; i++) {
     final List newNote = await sheet.values.row(i);
       // currentNotes.add(GURUelement(
       //     username: newNote[0],

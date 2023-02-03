@@ -1,13 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sheets_as_db/components/rectangular_button.dart';
 
 import '../../API/sheetAPI.dart';
-import '../../components/GURUlist/GuruListTile.dart';
 import '../../components/GURUlist/listBuild.dart';
-import '../../components/SmallRectangularButton.dart';
 import '../../constants/constants.dart';
-import '../../models/GURUelement.dart';
 import '../loading_circle.dart';
 
 class GURUlist extends StatefulWidget {
@@ -20,7 +16,7 @@ class GURUlist extends StatefulWidget {
 class _GURUlistState extends State<GURUlist> {
   String? dropDownValue;
 
-  var g;
+
 
   @override
   Widget build(BuildContext context) {
@@ -91,27 +87,35 @@ class _GURUlistState extends State<GURUlist> {
             SizedBox(
               height: 40,
             ),
-
-             Container(
-                        child:  FutureBuilder <List>(
-                          future: GETgurulist(dropDownValue),
-                          builder: (context, snapshot) {
-                            if(snapshot.data == null){
-                              return Container(child: Text("Select A Skill",style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 20, color: Colors.black54),),);
-                            }
-                            if (snapshot.hasData) {
-                              List data = snapshot.data ?? [];
-                              return Expanded(child: GURUList(list: data,));
-                            }
-                            else if (snapshot.hasError) {
-                              return Text("${snapshot.error}");
-                            }
-                            // By default show a loading spinner.
-                            return LoadingCircle();
-                          },
-                        ),
+            Container(
+              child: FutureBuilder<List>(
+                future: GETgurulist(dropDownValue),
+                builder: (context, snapshot) {
+                  if (snapshot.data == null) {
+                    return Container(
+                      child: Text(
+                        "Select A Skill",
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20,
+                            color: Colors.black54),
+                      ),
+                    );
+                  }
+                  if (snapshot.hasData) {
+                    List data = snapshot.data ?? [];
+                    return Expanded(
+                        child: GURUList(
+                      list: data,
+                    ));
+                  } else if (snapshot.hasError) {
+                    return Text("${snapshot.error}");
+                  }
+                  // By default show a loading spinner.
+                  return LoadingCircle();
+                },
               ),
-
+            ),
           ],
         ),
       ),
