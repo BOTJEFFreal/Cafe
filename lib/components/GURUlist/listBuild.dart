@@ -5,7 +5,8 @@ import 'GuruListTile.dart';
 
 class GURUList extends StatefulWidget {
   final List list;
-  const GURUList({Key? key, required this.list}) : super(key: key);
+  final skill;
+  const GURUList({Key? key, required this.list, required this.skill}) : super(key: key);
 
   @override
   State<GURUList> createState() => _GURUListState();
@@ -29,7 +30,7 @@ class _GURUListState extends State<GURUList> {
                   exp: widget.list[index][4],
                   desc: widget.list[index][2],
                   field: widget.list[index][3],
-                  index: index,
+                  index: index, skill: widget.skill,
                 ),
               ),
             ),

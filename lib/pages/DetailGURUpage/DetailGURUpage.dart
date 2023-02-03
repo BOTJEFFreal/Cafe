@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../API/sheetAPI.dart';
 import '../../components/rectangular_button.dart';
 import '../../components/rectangular_desc_field.dart';
 
@@ -9,8 +10,15 @@ class DetailGURUpage extends StatefulWidget {
   final name;
   final rating;
   final exp;
+  final skill;
+  final index;
   const DetailGURUpage(
-      {Key? key, required this.desc, required this.rate, required this.name, required this.rating,required this.exp})
+      {Key? key,
+      required this.desc,
+      required this.rate,
+      required this.name,
+      required this.rating,
+      required this.exp, required this.skill, required this.index})
       : super(key: key);
 
   @override
@@ -34,9 +42,9 @@ class _DetailGURUpageState extends State<DetailGURUpage> {
                 width: 40,
                 height: 40,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Colors.grey[300],
-                   ),
+                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.grey[300],
+                ),
                 child: Icon(
                   Icons.arrow_back,
                   color: Colors.black54,
@@ -45,7 +53,9 @@ class _DetailGURUpageState extends State<DetailGURUpage> {
               onPressed: () {},
             ),
           ),
-          SizedBox(height: 8,),
+          SizedBox(
+            height: 8,
+          ),
           Container(
             height: 200,
             decoration: BoxDecoration(
@@ -135,10 +145,13 @@ class _DetailGURUpageState extends State<DetailGURUpage> {
             height: 10,
           ),
           RectangularButton(
-              text: 'Connect',
-              press: () {
-                print('DESC: ${DescController.text}');
-              }, fontSize: 20,width: double.infinity,
+            text: 'Connect',
+            press: () {
+              print('DESC: ${DescController.text}');
+              ADDIssue(DescController.text,widget.index,widget.skill);
+            },
+            fontSize: 20,
+            width: double.infinity,
           )
         ],
       ),

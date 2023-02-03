@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:gsheets/gsheets.dart';
 import '../constants/constants.dart';
 import '../models/GURUelement.dart';
@@ -36,4 +38,16 @@ Future<List> GETgurulist(Skill) async {
   // numberOfNotes = 0;
   print(currentNotes);
   return currentNotes;
+}
+
+ADDIssue(Desc,Index,Skill) async{
+  final gsheets = GSheets(credentials);
+  final ss = await gsheets.spreadsheet(spreadsheetId);
+  var sheet = ss.worksheetByTitle(Skill);
+
+  var currentData = await sheet?.values.value(column: 7, row: Index+2);
+  var issues = currentData!+","+Desc;
+  await sheet?.values.insertValue(issues, column: 7, row: Index+2);
+
+
 }

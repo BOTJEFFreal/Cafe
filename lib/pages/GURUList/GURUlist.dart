@@ -16,8 +16,6 @@ class GURUlist extends StatefulWidget {
 class _GURUlistState extends State<GURUlist> {
   String? dropDownValue;
 
-
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -106,7 +104,7 @@ class _GURUlistState extends State<GURUlist> {
                     List data = snapshot.data ?? [];
                     return Expanded(
                         child: GURUList(
-                      list: data,
+                      list: data, skill:dropDownValue,
                     ));
                   } else if (snapshot.hasError) {
                     return Text("${snapshot.error}");

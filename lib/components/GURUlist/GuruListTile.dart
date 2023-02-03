@@ -11,7 +11,16 @@ class GuruListTile extends StatefulWidget {
   final name;
   final rating;
   final exp;
-  const GuruListTile({Key? key, required this.name, required this.rating, required this.exp, required this.desc, required this.field, this.index}) : super(key: key);
+  final skill;
+  const GuruListTile(
+      {Key? key,
+      required this.name,
+      required this.rating,
+      required this.exp,
+      required this.desc,
+      required this.field,
+      required this.index,required this.skill})
+      : super(key: key);
 
   @override
   State<GuruListTile> createState() => _GuruListTileState();
@@ -20,7 +29,8 @@ class GuruListTile extends StatefulWidget {
 class _GuruListTileState extends State<GuruListTile> {
   @override
   Widget build(BuildContext context) {
-    var decoration = BoxDecoration(borderRadius: BorderRadius.circular(12), boxShadow: [
+    var decoration =
+        BoxDecoration(borderRadius: BorderRadius.circular(12), boxShadow: [
       BoxShadow(
         color: Colors.grey[300]!,
         offset: const Offset(4, 4),
@@ -41,6 +51,8 @@ class _GuruListTileState extends State<GuruListTile> {
     String field = widget.field;
     String rating = widget.rating;
     String exp = widget.exp;
+    String skill = widget.skill;
+    int index = widget.index;
     return InkWell(
       child: Container(
         decoration: decoration,
@@ -82,13 +94,12 @@ class _GuruListTileState extends State<GuruListTile> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 10.0),
-                    child: Text(
-                      "${field}",
-                      style: TextStyle(
-                        color: Colors.grey[800],
-                        fontWeight: FontWeight.w900,
-                        fontFamily: 'Open Sans',)
-                    ),
+                    child: Text("${field}",
+                        style: TextStyle(
+                          color: Colors.grey[800],
+                          fontWeight: FontWeight.w900,
+                          fontFamily: 'Open Sans',
+                        )),
                   )
                 ],
               ),
@@ -96,20 +107,32 @@ class _GuruListTileState extends State<GuruListTile> {
                 height: 8,
               ),
               Container(
-                child:Text(
+                child: Text(
                   "${desc}",
-                   style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 14, color: Colors.black54),),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14,
+                      color: Colors.black54),
+                ),
               )
             ],
           ),
         ),
       ),
-      onTap: (){
+      onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => DetailGURUpage(desc: desc, rate: rating, name: name, rating: rating, exp: exp,)),
+          MaterialPageRoute(
+              builder: (context) => DetailGURUpage(
+                    desc: desc,
+                    rate: rating,
+                    name: name,
+                    rating: rating,
+                    exp: exp,
+                    skill: skill,
+                    index: index,
+                  )),
         );
-
       },
     );
   }
