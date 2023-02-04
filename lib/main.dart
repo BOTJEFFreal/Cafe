@@ -5,6 +5,7 @@ import 'package:sheets_as_db/pages/GURUList/GURUlist.dart';
 import 'package:sheets_as_db/pages/GURUsign_up/GURUsignUpPage.dart';
 import 'package:sheets_as_db/pages/LandingPage.dart';
 import 'package:sheets_as_db/pages/Login/loginPage.dart';
+import 'package:sheets_as_db/pages/USERsign_up/USERsignUpPage.dart';
 import 'package:sheets_as_db/pages/UsersList/Userlist.dart';
 
 
@@ -18,8 +19,9 @@ void main() async {
   // var sheet = ss. worksheetByTitle('USER');
   // // add to cell
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: Scaffold(
-      body: GURUlist(),
+      body: USERsignUpPage(),
     ),
   ));
 }

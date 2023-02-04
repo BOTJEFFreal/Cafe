@@ -27,7 +27,7 @@ class _GURUlistState extends State<GURUlist> {
             Row(
               children: [
                 Container(
-                  width: 400,
+                  width: 390,
                   child: DecoratedBox(
                     decoration: BoxDecoration(
                         gradient: LinearGradient(

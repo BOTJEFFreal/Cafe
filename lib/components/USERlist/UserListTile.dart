@@ -47,11 +47,14 @@ class _USERListTileState extends State<USERListTile> {
           children: [
             Align(
                 alignment: Alignment.topLeft,
-                child: Text("${widget.index}",
-                    style: const TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        color: Colors.black54))),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("${widget.index}",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: Colors.black54)),
+                )),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -138,10 +141,13 @@ class _USERListTileState extends State<USERListTile> {
                   "Problem: ${widget.desc}",
                   style: const TextStyle(
                       fontWeight: FontWeight.w500,
-                      fontSize: 14,
+                      fontSize: 18,
                       color: Colors.black54),
                 ),
               ),
+            ),
+            SizedBox(
+              height: 4,
             )
           ],
         ),

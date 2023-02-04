@@ -65,9 +65,13 @@ class _GuruListTileState extends State<GuruListTile> {
                 children: [
                   Row(
                     children: [
-                      Container(
-                        child: Icon(Icons.account_circle,
-                            size: 50, color: Colors.red),
+                      // Container(
+                      //   child: Icon(Icons.account_circle,
+                      //       size: 50, color: Colors.red),
+                      // ),
+                      CircleAvatar(
+                        radius: 20,
+                        backgroundImage: AssetImage('assets/${index+1}.png'),
                       ),
                       SizedBox(
                         width: 16,

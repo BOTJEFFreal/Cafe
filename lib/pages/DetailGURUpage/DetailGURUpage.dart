@@ -14,11 +14,13 @@ class DetailGURUpage extends StatefulWidget {
   final index;
   const DetailGURUpage(
       {Key? key,
-      required this.desc,
-      required this.rate,
-      required this.name,
-      required this.rating,
-      required this.exp, required this.skill, required this.index})
+      this.desc,
+      this.rate,
+      this.name,
+      this.rating,
+      this.exp,
+      this.skill,
+      this.index})
       : super(key: key);
 
   @override
@@ -35,29 +37,38 @@ class _DetailGURUpageState extends State<DetailGURUpage> {
       padding: const EdgeInsets.all(24.0),
       child: Column(
         children: [
-          Align(
-            alignment: Alignment.topLeft,
-            child: TextButton(
-              child: Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.grey[300],
-                ),
-                child: Icon(
-                  Icons.arrow_back,
-                  color: Colors.black54,
+          Row(
+            children: [
+              Align(
+                alignment: Alignment.topLeft,
+                child: TextButton(
+                  child: Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.grey[300],
+                    ),
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.black54,
+                    ),
+                  ),
+                  onPressed: () {},
                 ),
               ),
-              onPressed: () {},
-            ),
+              SizedBox(width: 50,),
+              Text("Discuss Your Problem",style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w800,
+              ))
+            ],
           ),
           SizedBox(
-            height: 8,
+            height: 16,
           ),
           Container(
-            height: 200,
+            // height: 200,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 color: Colors.grey[300],
@@ -84,8 +95,15 @@ class _DetailGURUpageState extends State<DetailGURUpage> {
                   children: [
                     Row(
                       children: [
-                        const Icon(Icons.account_circle,
-                            size: 100, color: Colors.red),
+                        // const Icon(Icons.account_circle,
+                        //     size: 100, color: Colors.red),
+                          Padding(
+                            padding: const EdgeInsets.only(left:8.0),
+                            child: CircleAvatar(
+                              radius: 45,
+                              backgroundImage: AssetImage('assets/5.jpg'),
+                        ),
+                          ),
                         const SizedBox(
                           width: 16,
                         ),
@@ -94,15 +112,15 @@ class _DetailGURUpageState extends State<DetailGURUpage> {
                           spacing: 5,
                           children: [
                             Text(
-                              "Name: ${widget.name}",
+                              "Name: Shweta",
                               style: testStyle,
                             ),
                             Text(
-                              "Rating:  ${widget.rating}star",
+                              "Rating:  4.5star",
                               style: testStyle,
                             ),
                             Text(
-                              "Exp:  ${widget.exp}K+ hours",
+                              "Exp:  5K+ hours",
                               style: testStyle,
                             ),
                           ],
@@ -111,7 +129,7 @@ class _DetailGURUpageState extends State<DetailGURUpage> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 24.0),
-                      child: Text("₹${widget.rate}/hour",
+                      child: Text("₹20/hour",
                           style: TextStyle(
                             color: Colors.grey[800],
                             fontWeight: FontWeight.w900,
@@ -123,12 +141,16 @@ class _DetailGURUpageState extends State<DetailGURUpage> {
                 const SizedBox(
                   height: 8,
                 ),
-                Text(
-                  "${widget.desc}",
-                  style: const TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 18,
-                      color: Colors.black54),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                    //"I am a versatile pro female singer",
+                    '''Hi, there! My name's Shweta and I'm a full-time French professionalvocalist/singer, singing in 7 languages. EDM, Pop, soundtracks and even audiobooks, I've recorded for many different projects''',
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18,
+                        color: Colors.black54),
+                  ),
                 )
               ],
             )),
@@ -145,10 +167,10 @@ class _DetailGURUpageState extends State<DetailGURUpage> {
             height: 10,
           ),
           RectangularButton(
-            text: 'Connect',
+            text: 'Discuss Your Problem',
             press: () {
               print('DESC: ${DescController.text}');
-              ADDIssue(DescController.text,widget.index,widget.skill);
+              ADDIssue(DescController.text, widget.index, widget.skill);
             },
             fontSize: 20,
             width: double.infinity,
