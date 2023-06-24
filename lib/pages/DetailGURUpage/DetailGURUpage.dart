@@ -148,7 +148,7 @@ class _DetailGURUpageState extends State<DetailGURUpage> {
             text: 'Connect',
             press: () {
               print('DESC: ${DescController.text}');
-              ADDIssue(DescController.text,widget.index,widget.skill);
+              // ADDIssue(DescController.text,widget.index,widget.skill);
             },
             fontSize: 20,
             width: double.infinity,

@@ -81,54 +81,54 @@ class _CredentialsState extends State<Credentials> {
             height: 12 / 2,
           ),
 
-        DecoratedBox(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: [
-                    lightPrimary,
-                    darkPrimary,
-                  ]
-              ),
-              borderRadius: BorderRadius.circular(12),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey[300]!,
-                  offset: const Offset(4, 4),
-                  blurRadius: 15,
-                  spreadRadius: 1,
-                ),
-                BoxShadow(
-                  color: Colors.white,
-                  offset: const Offset(-4, -4),
-                  blurRadius: 15,
-                  spreadRadius: 1,
-                ),
-              ]
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 0.0),
-            child: DropdownButton<String>(
-              value: dropDownValue,
-              icon: Icon(null),
-              hint: Text("Select"),
-              elevation: 16,
-              onChanged: (var newValue) {
-                setState(() {
-                  dropDownValue = newValue;
-                });
-              },
-              underline: SizedBox(),
-              items: ListofSkill.map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-            ),
-          ),
-        ),
+        // DecoratedBox(
+        //   decoration: BoxDecoration(
+        //       gradient: LinearGradient(
+        //           begin: Alignment.centerLeft,
+        //           end: Alignment.centerRight,
+        //           colors: [
+        //             lightPrimary,
+        //             darkPrimary,
+        //           ]
+        //       ),
+        //       borderRadius: BorderRadius.circular(12),
+        //       boxShadow: [
+        //         BoxShadow(
+        //           color: Colors.grey[300]!,
+        //           offset: const Offset(4, 4),
+        //           blurRadius: 15,
+        //           spreadRadius: 1,
+        //         ),
+        //         BoxShadow(
+        //           color: Colors.white,
+        //           offset: const Offset(-4, -4),
+        //           blurRadius: 15,
+        //           spreadRadius: 1,
+        //         ),
+        //       ]
+        //   ),
+        //   child: Padding(
+        //     padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 0.0),
+        //     child: DropdownButton<String>(
+        //       value: dropDownValue,
+        //       icon: Icon(null),
+        //       hint: Text("Select"),
+        //       elevation: 16,
+        //       onChanged: (var newValue) {
+        //         setState(() {
+        //           dropDownValue = newValue;
+        //         });
+        //       },
+        //       underline: SizedBox(),
+        //       items: ListofSkill.map<DropdownMenuItem<String>>((String value) {
+        //         return DropdownMenuItem<String>(
+        //           value: value,
+        //           child: Text(value),
+        //         );
+        //       }).toList(),
+        //     ),
+        //   ),
+        // ),
 
           RectangularButton(text: 'Sign In', width:double.infinity,fontSize:20,press: (){
             print('USERNAME: ${UserController.text}');
@@ -137,8 +137,8 @@ class _CredentialsState extends State<Credentials> {
             print('DESC: ${DescController.text}');
             print('DropDown: ${dropDownValue}');
             // _post();
-            ADDguru(UserController.text,EmailController.text,DescController.text,dropDownValue);
-            GETgurulist(dropDownValue);
+            // ADDguru(UserController.text,EmailController.text,DescController.text,dropDownValue);
+            // GETgurulist(dropDownValue);
           })
         ],
       ),
