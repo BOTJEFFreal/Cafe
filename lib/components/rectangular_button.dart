@@ -5,10 +5,10 @@ import '../../constants/constants.dart';
 class RectangularButton extends StatelessWidget {
   final String text;
   final VoidCallback press;
-  final width;
+  // final width;
   final fontSize;
 
-  const RectangularButton({Key? key, required this.text, required this.press, this.width, required this.fontSize})
+  const RectangularButton({Key? key, required this.text, required this.press, required this.fontSize})
       :super(key: key);
 
   @override
@@ -18,7 +18,7 @@ class RectangularButton extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(top: appPadding,bottom: appPadding /2),
         child: Container(
-          width: width,
+          // width: width,
           height: 65,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),

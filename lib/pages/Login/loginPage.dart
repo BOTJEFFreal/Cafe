@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../API/sheetAPI.dart';
+import '../../API/Auth.dart';
 import '../../components/Login/login_button.dart';
 import '../../components/Login/login_textField.dart';
+import '../USERsign_up/USERsignUpPage.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -16,10 +17,26 @@ class _LoginPageState extends State<LoginPage> {
   // text editing controllers
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+  var isLoading = false;
 
 
-  // sign user in method
-  void signUserIn() {}
+  // login user in method
+  Login(String _email, String _password, var _screen) {
+    if (_email.isNotEmpty && _password.isNotEmpty) {
+      logIn(_email, _password).then((user) {
+        if (user != null) {
+          print("Login Sucessfull");
+
+          Navigator.push(
+              context, MaterialPageRoute(builder: (_) => _screen()));
+        } else {
+          print("Login Failed");
+        }
+      });
+    } else {
+      print("Please fill form correctly");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
 
               // sign in button
               MyButton(
-                onTap: signUserIn,
+                onTap: Login(usernameController.text,passwordController.text,USERsignUpPage())
               ),
 
               const SizedBox(height: 50),
@@ -114,10 +131,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
 
-              const SizedBox(height: 50),
-
-              const SizedBox(height: 50),
-
+              const SizedBox(height: 100),
               // not a member? register now
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -127,13 +141,17 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(color: Colors.grey[700]),
                   ),
                   const SizedBox(width: 4),
-                  const Text(
+                  TextButton(onPressed: (){
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => USERsignUpPage()));
+                  }, child: Text(
                     'Register now',
                     style: TextStyle(
                       color: Colors.blue,
                       fontWeight: FontWeight.bold,
                     ),
-                  ),
+                  ),)
+                  
                 ],
               )
             ],

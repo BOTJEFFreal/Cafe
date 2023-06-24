@@ -151,7 +151,7 @@ class _DetailGURUpageState extends State<DetailGURUpage> {
               // ADDIssue(DescController.text,widget.index,widget.skill);
             },
             fontSize: 20,
-            width: double.infinity,
+            // width: double.infinity,
           )
         ],
       ),

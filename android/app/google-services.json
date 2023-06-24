@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1028736676112:android:87c2be4d28335b59b73595",
         "android_client_info": {
-          "package_name": "com.android.application"
+          "package_name": "com.example.sheets_as_db"
         }
       },
       "oauth_client": [
