@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/constants.dart';
+import '../constant.dart';
 import 'neumorphic_text_field_container.dart';
 import 'neumorphic_text_field_desc_container.dart';
 

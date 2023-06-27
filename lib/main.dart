@@ -1,25 +1,24 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:sheets_as_db/pages/DetailGURUpage/DetailGURUpage.dart';
-import 'package:sheets_as_db/pages/GURUList/GURUlist.dart';
-import 'package:sheets_as_db/pages/GURUsign_up/GURUsignUpPage.dart';
-import 'package:sheets_as_db/pages/LandingPage.dart';
-import 'package:sheets_as_db/pages/Login/loginPage.dart';
-import 'package:sheets_as_db/pages/USERsign_up/USERsignUpPage.dart';
-import 'package:sheets_as_db/pages/UsersList/Userlist.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+import 'Screens/guruListPage.dart';
+import 'Screens/loginPage.dart';
 
 
-
-void main() async {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  // // add to cell
-  runApp(MaterialApp(
-    home: Scaffold(
-      body: USERsignUpPage(),
-    ),
-  ));
+  runApp(MyApp());
 }
 
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: LoginPage()
+    );
+  }
+}

@@ -1,25 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants/constants.dart';
-import '../../pages/DetailGURUpage/DetailGURUpage.dart';
+import '../Screens/guruDetailsPage.dart';
+
 
 class GuruListTile extends StatefulWidget {
-  final index;
-  final desc;
-  final field;
-  final name;
-  final rating;
-  final exp;
-  final skill;
+  final data;
   const GuruListTile(
       {Key? key,
-      required this.name,
-      required this.rating,
-      required this.exp,
-      required this.desc,
-      required this.field,
-      required this.index,required this.skill})
+        required this.data})
       : super(key: key);
 
   @override
@@ -30,7 +19,7 @@ class _GuruListTileState extends State<GuruListTile> {
   @override
   Widget build(BuildContext context) {
     var decoration =
-        BoxDecoration(borderRadius: BorderRadius.circular(12), boxShadow: [
+    BoxDecoration(borderRadius: BorderRadius.circular(12), boxShadow: [
       BoxShadow(
         color: Colors.grey[300]!,
         offset: const Offset(4, 4),
@@ -46,13 +35,11 @@ class _GuruListTileState extends State<GuruListTile> {
     ]);
     var testStyle = TextStyle(
         fontWeight: FontWeight.w500, fontSize: 15, color: Colors.grey[800]);
-    String name = widget.name;
-    String desc = widget.desc;
-    String field = widget.field;
-    String rating = widget.rating;
-    String exp = widget.exp;
-    String skill = widget.skill;
-    int index = widget.index;
+    String name = widget.data['username'];
+    String desc = widget.data['desc'];
+    String field = widget.data['skill'];
+    double rating = widget.data['stars'];
+    int exp = widget.data['experience'];
     return InkWell(
       child: Container(
         decoration: decoration,
@@ -81,7 +68,7 @@ class _GuruListTileState extends State<GuruListTile> {
                             style: testStyle,
                           ),
                           Text(
-                            "Rating:  $rating star",
+                            "Rating:  ${rating} star",
                             style: testStyle,
                           ),
                           Text(
@@ -120,19 +107,7 @@ class _GuruListTileState extends State<GuruListTile> {
         ),
       ),
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => DetailGURUpage(
-                    desc: desc,
-                    rate: rating,
-                    name: name,
-                    rating: rating,
-                    exp: exp,
-                    skill: skill,
-                    index: index,
-                  )),
-        );
+        Navigator.push(context, MaterialPageRoute(builder: (context) => guruDetailsPage(guru: widget.data)));
       },
     );
   }

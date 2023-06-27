@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/constants.dart';
+import '../constant.dart';
+
 
 class RectangularButton extends StatelessWidget {
   final String text;
   final VoidCallback press;
-  // final width;
-  final fontSize;
+  final double fontSize;
 
   const RectangularButton({Key? key, required this.text, required this.press, required this.fontSize})
       :super(key: key);
